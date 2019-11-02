@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
 //login to account, account has access to different rooms with different IDs
 
+    private String[] usernames = {"fong.121","1234"};
+    private String[] passwords = {"1234","password"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     //login success
                     Intent toDoorToggle = new Intent(getApplicationContext(), doorToggle.class);
                     toDoorToggle.putExtra("inputUsername", inputUsername);
+                    toDoorToggle.putExtra("usernameArray", usernames);
                     startActivity(toDoorToggle);
                 }else{
                     //login fail
@@ -51,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean checkLogin(String inputUsername, String inputPassword){
         boolean loginSuccess = false;
-        String[] usernames = {"fong.121","again"};
-        String[] passwords = {"1234","password"};
+
 
         for (int i = 0; i < usernames.length; i++){
             if (inputUsername.equals(usernames[i])&&inputPassword.equals(passwords[i])){
