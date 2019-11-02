@@ -34,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
                 String inputUsername = usernameField.getText().toString();
                 String inputPassword = passwordField.getText().toString();
 
+                statusTextView.setText(" "); //resets text field
+
                 if (checkLogin(inputUsername, inputPassword)){
                     //login success
-                    startActivity(new Intent(getApplicationContext(), doorToggle.class));
+                    Intent toDoorToggle = new Intent(getApplicationContext(), doorToggle.class);
+                    toDoorToggle.putExtra("inputUsername", inputUsername);
+                    startActivity(toDoorToggle);
                 }else{
                     //login fail
-                    statusTextView.setText("Username and/or password invalid. Login failed!");
+                    statusTextView.setText("Username and/or password invalid. Login failed!"); //changes empty text field to let user know that login failed
                 }
             }
         });

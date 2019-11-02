@@ -9,58 +9,59 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <ImageButton
-            android:id="@+id/osuButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/osu_o" />
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <EditText
             android:id="@+id/titleText"
             android:layout_width="302dp"
             android:layout_height="79dp"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="125dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="xX_d69r_420_0p3n3rz_Xx"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/osuButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/toggleButton"
+            android:layout_width="112dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="Open/Close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userRoomsListView" />
+
+        <ListView
+            android:id="@+id/userRoomsListView"
+            android:layout_width="346dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="112dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginBottom="32dp"
+            android:text="Share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userRoomsListView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/osuButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/osu_o" />
-
-    <EditText
-        android:id="@+id/titleText2"
-        android:layout_width="302dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="125dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="xX_d69r_420_0p3n3rz_Xx"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/osuButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
