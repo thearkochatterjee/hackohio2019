@@ -18,13 +18,17 @@
 
     <EditText
         android:id="@+id/titleText"
-        android:layout_width="264dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="302dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="125dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="xX_d69r_420_0p3n3rz_Xx"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/osuButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
