@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ListDataActivity extends AppCompatActivity {
-    private static final String TAG = "ListDataActivity"
+    private static final String TAG = "ListDataActivity";
     DatabaseHelper mdatabasehelper;
     private ListView mListView;
     @Override
