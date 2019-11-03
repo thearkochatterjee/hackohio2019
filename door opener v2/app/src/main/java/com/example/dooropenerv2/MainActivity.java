@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
 //login to account, account has access to different rooms with different IDs
 
-    private String[] usernames = {"fong.121","1234"};
-    private String[] passwords = {"1234","password"};
+    private String[] usernames = {"fong.121","1234",""};
+    private String[] passwords = {"1234","password",""};
 
     private boolean checkLogin(String inputUsername, String inputPassword){
         boolean loginSuccess = false;

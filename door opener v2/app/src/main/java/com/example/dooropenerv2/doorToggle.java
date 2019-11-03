@@ -43,8 +43,8 @@ public class doorToggle extends AppCompatActivity {
     // MAC-address of Bluetooth module (you must edit this line)
     private static String address = "98:D3:51:FD:CF:07";
 
-    //Toggle counter
-    boolean off = true;
+    //might need to move this to onCreate
+    EditText errorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,8 @@ public class doorToggle extends AppCompatActivity {
         Button toggleButton = (Button) findViewById(R.id.toggleButton);
         Button shareButton = (Button) findViewById(R.id.shareButton);
         EditText titleText = (EditText) findViewById(R.id.titleText);
+        errorText = (EditText)findViewById(R.id.errorText);
+
         final ListView userRoomsListView = (ListView) findViewById(R.id.userRoomsListView);
 
         //want list of rooms user has access to
@@ -84,16 +86,11 @@ public class doorToggle extends AppCompatActivity {
         });
 
         toggleButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
             public void onClick(View v) {
-                if (off) {
                     sendData(1);
-                    Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
-                    off = false;
-                } else {
-                    sendData(0);
-                    Toast.makeText(getBaseContext(), "Turn off LED", Toast.LENGTH_SHORT).show();
-                    off = true;
-                }
+                    errorText.setText("Turn on LED");
+                    //Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -205,11 +202,12 @@ public class doorToggle extends AppCompatActivity {
         }
 
         private void errorExit (String title, String message){
+//errorText.setText(title + " - " + message);
             Toast.makeText(getBaseContext(), title + " - " + message, Toast.LENGTH_LONG).show();
             finish();
         }
 
-        private void sendData ( int message){
+        private void sendData (int message){
 
             Log.d(TAG, "...Send data: " + message + "...");
 

@@ -31,19 +31,17 @@
             android:id="@+id/toggleButton"
             android:layout_width="112dp"
             android:layout_height="62dp"
-            android:layout_marginTop="34dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
-            android:text="Open/Close"
+            android:text="Open"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userRoomsListView" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ListView
             android:id="@+id/userRoomsListView"
-            android:layout_width="346dp"
-            android:layout_height="460dp"
+            android:layout_width="336dp"
+            android:layout_height="178dp"
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,10 +53,20 @@
             android:layout_height="62dp"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
-            android:layout_marginTop="34dp"
             android:layout_marginBottom="32dp"
             android:text="Share"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/errorText"
+            android:layout_width="281dp"
+            android:layout_height="162dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Sample Text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRoomsListView" />
 
