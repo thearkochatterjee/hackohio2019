@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.OutputStream;
+
+
 public class MainActivity extends AppCompatActivity {
 
 //login to account, account has access to different rooms with different IDs
@@ -20,10 +23,24 @@ public class MainActivity extends AppCompatActivity {
     private String[] usernames = {"fong.121","1234"};
     private String[] passwords = {"1234","password"};
 
+    private boolean checkLogin(String inputUsername, String inputPassword){
+        boolean loginSuccess = false;
+
+
+        for (int i = 0; i < usernames.length; i++){
+            if (inputUsername.equals(usernames[i])&&inputPassword.equals(passwords[i])){
+                loginSuccess = true;
+            }
+        }
+
+        return loginSuccess;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.door_toggle);
+        setContentView(R.layout.activity_main);
 
         final EditText usernameField = (EditText)findViewById(R.id.usernameField);
         final EditText passwordField = (EditText)findViewById(R.id.passwordField);
@@ -38,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
                 String inputPassword = passwordField.getText().toString();
 
                 statusTextView.setText(" "); //resets text field
+                Intent toDoorToggle = new Intent(getApplicationContext(), doorToggle.class);
 
                 if (checkLogin(inputUsername, inputPassword)){
                     //login success
-                    Intent toDoorToggle = new Intent(getApplicationContext(), doorToggle.class);
                     toDoorToggle.putExtra("inputUsername", inputUsername);
                     toDoorToggle.putExtra("usernameArray", usernames);
                     startActivity(toDoorToggle);
@@ -52,17 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private boolean checkLogin(String inputUsername, String inputPassword){
-        boolean loginSuccess = false;
-
-
-        for (int i = 0; i < usernames.length; i++){
-            if (inputUsername.equals(usernames[i])&&inputPassword.equals(passwords[i])){
-                loginSuccess = true;
-            }
-        }
-
-        return loginSuccess;
-    }
 }
+
+
